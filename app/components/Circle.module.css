@@ -1,0 +1,11 @@
+/* Add this to your CSS file */
+.circle {
+  width: 100px; /* Diameter of the circle */
+  height: 100px; /* Diameter of the circle */
+  border-radius: 50%; /* Makes the div a circle */
+  background-color: #3498db; /* Circle color */
+  position: fixed; /* Allows the circle to move */
+  transform: translate(-50%, -50%); /* Centers the circle on coordinates */
+  pointer-events: none; /* Allows mouse events to pass through */
+  z-index: 10;
+}

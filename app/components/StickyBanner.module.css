@@ -1,0 +1,27 @@
+/*StickyBanner.module.css*/
+.container{
+  width: 120%;
+}
+
+.banner {
+  position: fixed;
+  bottom: 5%;
+  left: 100%; /* Start off-screen to the right */
+  height: 20px;
+  background-color: red;
+  color: yellow;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap; /* Keep the text in a single line */
+  z-index: 1000; /* Ensure it appears above other content */
+  animation: slide 10s linear infinite; /* Adjust duration as needed */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-120vw); /* Move to the left, across the entire viewport width */
+  }
+}

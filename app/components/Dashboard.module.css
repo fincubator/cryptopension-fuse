@@ -1,0 +1,163 @@
+.imageWrapper {
+  position: relative; /* This is crucial */
+  display: inline-block;
+}
+
+.container {
+  display: flex; /* Aligns images side by side */
+  justify-content: center; /* Centers images if there's extra space */
+}
+
+.dashboard {
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.top_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.top_row div {
+  width: 50%;
+  z-index: -10;
+}
+
+.bottom_row {
+  position: absolute;
+  bottom: 100px; /* Align to bottom */
+  left: 0;
+  width: 100%;
+  display: flex; /* Use flexbox to align images */
+  justify-content: center; /* Center images horizontally */
+  align-items: flex-end; /* Align images to the bottom */
+  z-index: 10;
+}
+
+.tokenImage {
+  opacity: 0; /* Start with images fully transparent */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
+.tokenImage:hover {
+  opacity: 1; /* Make image fully opaque on hover */
+}
+
+.dashboard h1 {
+  position: absolute;
+  font-size: 50px;
+  margin-top: 0px;
+}
+
+.center_image {
+  position: absolute;
+  top: 25%; /* Adjusts to place the image between the top and the middle */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7); /* Center and scale down the image */
+  z-index: 10; /* Ensure it's above other content if needed */
+}
+
+.spinning_image {
+  animation: spinZ 10s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.logoLarge {
+  transform: scale(1.2); /* Adjust scale value as needed */
+  transition: transform 0.3s ease;
+}
+
+@keyframes spinY {
+  from { transform: rotateY(0deg) scale(0.5); }
+  to { transform: rotateY(360deg) scale(0.5); }
+}
+
+.extraContent {
+  position: fixed; /* or absolute depending on your layout */
+  top: 38%;
+  left: 59%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it's above other content */
+  pointer-events: none; /* This disables interaction with the displayed image */
+}
+
+.extraContent img {
+  max-width: 50%; /* Ensure the image fits within the viewport */
+  max-height: 40vh; /* Adjust based on your needs, keeping it within the viewport */
+  display: block; /* Remove extra space below the image */
+}
+
+
+/* Dashboard.module.css */
+.borderDiv {
+  display: inline-block;
+  justify-content: center;
+  width: 40%; /* Control the width as needed */
+  height: 300px; /* Fixed height */
+  text-align: center;
+}
+
+.leftBorder, .rightBorder {
+  position: relative;
+  width: 20%;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+  margin-top: -400px; /* Move divs 50px up */
+
+}
+
+.wallet {
+  padding: 10px 20px; /* Increase padding to make the button bigger */
+  font-size: 16px;
+    justify-content: center;
+
+}
+
+
+.topUpButton {
+  padding: 10px 20px; /* Increase padding to make the button bigger */
+  font-size: 1rem; /* Adjust font size as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #007b11; /* Example background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.topUpButton:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Dashboard.module.css */
+.paymentInput {
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.paymentButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.paymentButton:hover {
+  background-color: #45a049;
+}
+

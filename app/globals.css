@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #F7931A, #f7ad1a, #F7931A, #f77a1a, #F7931A, #f7ad1a, #F7931A, #f77a1a, #F7931A, #f7ad1a, #F7931A, #f77a1a);
+  background-size: 400% 400%;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  animation: gradientBackground 50s ease infinite;
+}
+
+@keyframes gradientBackground {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 75%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 25%;
+  }
+}

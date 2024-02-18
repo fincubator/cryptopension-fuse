@@ -1,0 +1,98 @@
+/* TokenImages.module.css */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;/* Ensure images are side by side */
+  overflow-x: hidden;
+}
+
+.tokenImage {
+  margin-right: 10px; /* Space between images */
+  /* Optional: Set a specific size for the images if needed */
+  width: 100px; /* Adjust based on your preference */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 1; /* Images are invisible by default */
+  transition: opacity 0.5s ease;
+}
+
+.tokenImage.visible {
+  opacity: 1;
+
+   /* Become fully visible */
+}
+
+.tokenImage:hover {
+  /*opacity: 1;*/
+}
+
+/* Remove margin from the last image */
+.tokenImage:last-child {
+  margin-right: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  margin-right: 10px;
+  display: inline-block;
+
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.kasaImage {
+  max-width: 120%; /* Adjust size of the logo */
+  max-height: 120%;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Original size */
+  }
+  50% {
+    transform: scale(1.05); /* Scale up a bit */
+  }
+  100% {
+    transform: scale(1); /* Back to original size */
+  }
+}
+
+
+.kasaImage:hover {
+  transform: scale(1.1); /* Scale up logo on hover */
+}
+
+.kasaImage::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Directly below the image */
+  left: 50%;
+  transform: translate(-50%, 10px); /* Adjust as necessary to position the glow */
+  width: 100%; /* Match the width of the image or adjust to your preference */
+  height: 10px; /* Height of the glow effect */
+  background: yellow; /* Example glow color */
+  border-radius: 50%;
+  box-shadow: 0 0 15px yellow; /* Adjust the color and spread of the glow */
+  opacity: 0; /* Start hidden */
+  animation: fadeInGlow 2s ease-out 5s forwards; /* Animation to fade in the glow */
+}
+
+@keyframes fadeInGlow {
+  to {
+    opacity: 1; /* Fully visible at the end of the animation */
+  }
+}
